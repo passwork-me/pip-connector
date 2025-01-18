@@ -1,9 +1,9 @@
 from loguru import logger
 
 
-def is_failed_status_code(status_code: int, prefix: str = ""):
-    if status_code != 200:
-        logger.error(f"{prefix}, HTTP response status code code: {status_code} != 200")
+def is_failed_status_code(status_code: int, prefix: str = "", success_status_code=200):
+    if status_code != success_status_code:
+        logger.error(f"{prefix}, HTTP response status code code: {status_code} != {success_status_code}")
         return True
 
 
