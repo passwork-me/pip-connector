@@ -1,7 +1,7 @@
 from .session_options import SessionOptions
 from .rest_modules.passwords import get_password, get_attachments, search_passwords, add_password, \
     delete_password, get_inbox_passwords, get_inbox_password
-from .rest_modules.vaults import get_vault
+from .rest_modules.vaults import get_vault, get_domain, add_vault
 from .utils import (
     get_vault_password,
     get_encryption_key,
@@ -244,4 +244,31 @@ class PassworkAPI:
         """
 
         return get_inbox_encryption_key(inbox_password, self.session_options)
+
+    def get_domain(self) -> dict:
+        """Retrieves domain info
+
+        REST Endpoint: GET /vaults/domain
+
+        Returns:
+            dict: A dictionary containing the details of vault domain
+        """
+
+        return get_domain(options=self.session_options)
+
+    def add_vault(self, name: str, is_private: bool, domain: dict) -> dict:
+        """Adds a new vault
+
+        REST Endpoint: POST /vaults
+
+        Args:
+            name (str): The vault name
+            is_private (bool): Vault privacy flag
+            domain (dict): The vault domain info
+
+        Returns:
+            dict: A dictionary containing the details of the requested inbox password.
+        """
+
+        return add_vault(name, is_private, domain, options=self.session_options)
 
