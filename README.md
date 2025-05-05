@@ -1,3 +1,7 @@
+## Deprecation Notice
+
+**This project is now deprecated and will be removed soon.** It is no longer maintained and may contain security vulnerabilities or compatibility issues with newer systems. Please switch to the official Passwork Python connector available at [https://github.com/passwork-me/passwork-python](https://github.com/passwork-me/passwork-python) for continued support, security updates, and additional features. All future development will happen in the official repository.
+
 ## About the API
 Passwork API lets you retrieve, create, update passwords, folders and vaults. It is an easy way how you can integrate Passwork with your infrastructure. Use our Passwork Python Connector to make the integration smoother. The API operates behalf of the user whom API Key is used.
 Check for all available methods in
