@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='passwork',
-    version='0.1.0',
+    version='0.1.1',
     description='Passwork API connector',
     long_description=readme(),
     long_description_content_type='text/markdown',

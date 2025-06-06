@@ -1,5 +1,5 @@
 import re
-from ..utils import crypto_interface
+from ..utils import crypto_interface, generate_string
 
 __all__ = [
     "get_encryption_key",
@@ -64,6 +64,14 @@ def use_key_encryption(vault: dict):
 def validate_customs(customs: list):
     if any(f["type"] == "totp" and not is_valid_totp(f["value"]) for f in customs):
         raise Exception({"code": "invalidTotpFormat"})
+
+
+def generate_vault_master_password() -> str:
+    return generate_string(100)
+
+
+def generate_vault_salt() -> str:
+    return generate_string(32)
 
 
 def encrypt_string(string: str, encryption_key: str, options):
